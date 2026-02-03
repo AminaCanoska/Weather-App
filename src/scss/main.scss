@@ -1,0 +1,25 @@
+@use"variables";
+@use"layout";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    //background-color: variables.$primary-color;
+    @include layout.primary-font;
+    color: variables.$headings-color;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.settled {
+    @include layout.tot-grid;
+    padding: calc(100vh - 99vh); //DA VEDERE DOMANI
+    .nav-bar {
+        h3 {
+            color: variables.$primary-color;
+        }
+    }
+    
+    
+}
+

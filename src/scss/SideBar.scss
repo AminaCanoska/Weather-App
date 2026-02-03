@@ -1,0 +1,56 @@
+@use"variables";
+@use"layout";
+
+.side-bar {
+    @include layout.sidebar;
+    @include layout.rounded;
+    position: relative;
+    overflow: hidden;
+    width: 2rem;
+    grid-column: 1;
+    grid-row: 1 / 5;
+    padding-top: 3rem;
+
+   &::before {
+    content: "";
+    @include layout.blurred;
+    position: absolute;
+    top: -20px; left: -20px;   
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    z-index: 0;
+}
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+
+    img {
+        width: 15px; 
+        filter:invert(1);
+    }
+    p {
+        font-size: 0.8rem;
+    }
+    a {
+      @include layout.general-component;  
+      text-decoration: none;
+      color: inherit;
+      font-size: 0.8rem;
+      gap: 0.5rem
+    }
+    div {
+        @include layout.general-component;
+        gap: 0.5rem;
+
+        button {
+            width: fit-content;
+            background: none;
+            border: none;
+            color: variables.$headings-color;
+            font-size: 0.8rem;
+            @include layout.primary-font;
+            cursor: pointer;
+        }
+    }
+}

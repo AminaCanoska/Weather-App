@@ -1,0 +1,107 @@
+@use"variables";
+@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+//GLOBALI
+//mixin riutilizzabile per più componenti
+@mixin general-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+//mixin per il background blurred per tutti i componenti 
+@mixin blurred {
+    background: variables.$components-background-img;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(20px);
+}
+
+//SPECIFICI PER COMPONENTI
+//mixin per logo + searchbar 
+@mixin header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    //grid-row: 2 / 3; //NON LO PRENDE
+}
+
+//mixin sidebar 
+@mixin sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+// mixin per componente con elenco del forcast giornaliero 
+@mixin today-forcast {
+    @include air-conditions;
+    align-items: center;
+
+}
+
+//mixin per componente air condition
+@mixin air-conditions {
+    display: flex;
+    justify-content: space-between;
+}
+
+//mixing per componente air condition: dettagli interni
+@mixin air {
+    @include air-conditions;
+    width: 90%;
+}
+
+//mixin per componente laterale destro
+@mixin lateral-day-forcast {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+//mixing layout globale 
+@mixin tot-grid {
+    display: grid;
+    grid-template-columns: 4rem 1fr 17rem;
+    grid-template-rows: 4rem 1fr 1fr 1fr;
+    gap: 1rem;
+    height: 100vh;
+    grid-template-areas:
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar main main"
+    "sidebar main main";
+}
+
+//mixin per arrotondamenti
+@mixin rounded {
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+//FONT PRINCIPALE 
+@mixin primary-font {
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
+}
+
+
+//FONT SECONDARIO 
+@mixin secondary-font {
+    font-family: "Bubbler One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+@use"variables";
+@use"layout";
+
+.nav-bar {
+    @include layout.header;
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    height: fit-content;
+    h3 {
+        @include layout.secondary-font;
+        margin: auto 0;
+    };
+    input {
+        @include layout.rounded;
+        background-color: variables.$secondary-color;
+        height: 2.5rem;
+        width: 90%;
+    }
+    input::placeholder {
+        color: variables.$headings-color
+    }
+}

@@ -1,0 +1,27 @@
+@use"variables";
+@use"layout";
+
+.today-forecast {
+    @include layout.rounded;
+    grid-row: 3 / 4;
+    grid-column: 2 / 3;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    &::before {
+    content: "";
+    @include layout.blurred;
+    position: absolute;
+    top: -20px; left: -20px;   
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    z-index: 0;
+    }
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+
+   
