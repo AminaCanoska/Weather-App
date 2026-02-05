@@ -1,12 +1,12 @@
 import "../scss/CurrentCity.scss";
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setCity } from "../store/CurrentCitySlice";
 
 function CurrentCity(){
    const dispatch = useDispatch();
-   const weatherData = useLoaderData();
+   const weatherData = useRouteLoaderData("root");
    console.log("weatherData:", weatherData);
    
     const {

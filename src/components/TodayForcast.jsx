@@ -1,9 +1,9 @@
 import "../scss/TodayForcast.scss";
-import { useLoaderData } from "react-router-dom";
+import { useRouteLoaderData } from "react-router-dom";
 
 
 function TodayForcast(){
-    let { forecast } = useLoaderData();
+    let { forecast } = useRouteLoaderData("root");
 
     const todayForecasts = forecast?.list?.slice(0, 8) || [];
 
