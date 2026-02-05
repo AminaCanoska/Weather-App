@@ -1,0 +1,27 @@
+@use"variables";
+@use"layout";
+
+.current-city {
+    @include layout.rounded;
+    @include layout.today-forcast;
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
+    position: relative;
+    overflow: hidden;
+    &::before {
+    content: "";
+    @include layout.blurred;
+    position: absolute;
+    top: -20px; left: -20px;   
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    z-index: 0;
+}
+    > * {
+        position: relative;
+        z-index: 1;
+    }
+    .current-city-details {
+        width: 70%
+    }
+}

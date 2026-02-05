@@ -1,0 +1,13 @@
+@use"variables";
+@use"layout";
+
+.is-dark {
+    @include layout.tot-grid;
+    padding: calc(100vh - 99vh); //DA VEDERE DOMANI
+    background-color: variables.$primary-color;
+    .nav-bar {
+        h3 {
+            color: variables.$headings-color;
+        }
+    }
+}
